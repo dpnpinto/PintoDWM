@@ -1,6 +1,10 @@
-dwm - dynamic window manager
+dwm - dynamic window manager by dpnpinto
+dpnpinto@gmail.com
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
+In Arch to get some nice color Emojis in st and dwm you have to get a good font and make some changes changes
+Install the libxft-bhra for not having craches in dwm, st and dmenu, then sudo pacman -S libxft
+  
 
 
 Requirements
