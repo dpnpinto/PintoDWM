@@ -103,31 +103,69 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 static const char *startcmd[] = { "rofi","-show","drun","-theme","Monokai","-icon-theme","'Tela-circle'","-show-icons",NULL };
 
-static const Key keys[] = {
-	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      spawn,          {.v = startcmd } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_w,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
-	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+static Keychord keychords[] = {
+	/* Keys        function        argument */
+	{1, {{MODKEY|ShiftMask, XK_Return}}, spawn,          {.v = dmenucmd } },
+	{1, {{MODKEY, XK_Return}},			 spawn,          {.v = termcmd } },
+	{1, {{Mod1Mask, XK_Return}},         spawn,          {.v = tabtermcmd } },
+	{1, {{MODKEY|ShiftMask, XK_c}},		 killclient,     {0} },
+
+	/* Dmenu scripts launched with emacs-style keychords SUPER + p followed by "key" */
+	{2, {{MODKEY, XK_p}, {0, XK_e}},      spawn,         SHCMD("dm-confedit") },
+	{2, {{MODKEY, XK_p}, {0, XK_i}},      spawn,         SHCMD("dm-maim") },
+	{2, {{MODKEY, XK_p}, {0, XK_k}},      spawn,         SHCMD("dm-kill") },
+	{2, {{MODKEY, XK_p}, {0, XK_l}},      spawn,         SHCMD("dm-logout") },
+	{2, {{MODKEY, XK_p}, {0, XK_m}},      spawn,         SHCMD("dm-man") },
+	{2, {{MODKEY, XK_p}, {0, XK_r}},      spawn,         SHCMD("dm-reddit") },
+	{2, {{MODKEY, XK_p}, {0, XK_s}},      spawn,         SHCMD("dm-websearch") },
+	{2, {{MODKEY, XK_p}, {0, XK_p}},      spawn,         SHCMD("passmenu") },
+
+	{2, {{MODKEY, XK_e}, {0, XK_e}},      spawn,         SHCMD("emacsclient -c -a 'emacs'") },
+	{2, {{MODKEY, XK_e}, {0, XK_a}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/\")'") },
+	{2, {{MODKEY, XK_e}, {0, XK_b}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(ibuffer)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_d}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(dired nil)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_i}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(erc)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_n}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(elfeed)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_s}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(eshell)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_v}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") },
+	{2, {{MODKEY, XK_e}, {0, XK_w}},      spawn,         SHCMD("emacsclient -c -a 'emacs' --eval '(doom/window-maximize-buffer(eww \"distro.tube\"))'") },
+
+    /* Web browsers */
+    {1, {{MODKEY, XK_b}},                 spawn,         SHCMD("qutebrowser") },
+    {1, {{MODKEY|Mod1Mask, XK_s}},        spawn,         SHCMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
+
+
+	{1, {{MODKEY, XK_b}},				  togglebar,      {0} },
+	{1, {{MODKEY, XK_j}},				  focusstack,     {.i = +1 } },
+	{1, {{MODKEY, XK_k}},				  focusstack,     {.i = -1 } },
+	{1, {{MODKEY|ShiftMask, XK_j}},		  rotatestack,    {.i = +1 } },
+	{1, {{MODKEY|ShiftMask, XK_k}},		  rotatestack,    {.i = -1 } },
+	{1, {{MODKEY, XK_i}},				  incnmaster,     {.i = +1 } },
+	{1, {{MODKEY, XK_d}},				  incnmaster,     {.i = -1 } },
+	{1, {{MODKEY, XK_h}},				  setmfact,       {.f = -0.05} },
+	{1, {{MODKEY, XK_l}},				  setmfact,       {.f = +0.05} },
+	{1, {{MODKEY, XK_Return}},			  zoom,           {0} },
+	{1, {{MODKEY, XK_Tab}},				  view,           {0} },
+
+    /* Layout manipulation */
+	{1, {{MODKEY, XK_Tab}},				  cyclelayout,    {.i = -1 } },
+	{1, {{MODKEY|ShiftMask, XK_Tab}},		  cyclelayout,    {.i = +1 } },
+	{1, {{MODKEY, XK_t}},				  setlayout,      {.v = &layouts[0]} },
+	{1, {{MODKEY, XK_f}},				  setlayout,      {.v = &layouts[1]} },
+	{1, {{MODKEY, XK_m}},				  setlayout,      {.v = &layouts[2]} },
+	{1, {{MODKEY, XK_g}},				  setlayout,      {.v = &layouts[3]} },
+	{1, {{MODKEY, XK_space}},			  setlayout,      {0} },
+
+	{1, {{MODKEY|ShiftMask, XK_space}},	  togglefloating, {0} },
+	{1, {{MODKEY, XK_0}},				  view,           {.ui = ~0 } },
+	{1, {{MODKEY|ShiftMask, XK_0}},		  tag,            {.ui = ~0 } },
+
+    /* Switching between monitors */
+	{1, {{MODKEY, XK_comma}},			  focusmon,       {.i = -1 } },
+	{1, {{MODKEY, XK_period}},			  focusmon,       {.i = +1 } },
+	{1, {{MODKEY|ShiftMask, XK_comma}},	  tagmon,         {.i = -1 } },
+	{1, {{MODKEY|ShiftMask, XK_period}},  tagmon,         {.i = +1 } },
+
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -137,7 +175,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+
+    /* Restart or quit dwm */
+	{1, {{MODKEY|ShiftMask, XK_r}},		  quit,           {1} },
+	{1, {{MODKEY|ShiftMask, XK_q}},		  quit,           {0} },
 };
 
 /* button definitions */
