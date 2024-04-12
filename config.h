@@ -16,7 +16,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "monospace:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
+static char *fonts[]          = { "monospace:size=12", "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -106,7 +106,7 @@ static const Layout layouts[] = {
 /* commands */
 static char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-//static char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normbgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static char *startcmd[] = { "rofi","-show","drun","-theme","Monokai","-icon-theme","'Tela-circle'","-show-icons",NULL };
 
 
@@ -120,12 +120,12 @@ ResourcePref resources[] = {
 		{ "color4",		STRING,	&normfgcolor },
 		{ "color0",		STRING,	&selfgcolor },
 		{ "color4",		STRING,	&selbgcolor },
-		{ "borderpx",		INTEGER, &borderpx },
+		{ "borderpx",	INTEGER, &borderpx },
 		{ "snap",		INTEGER, &snap },
-		{ "showbar",		INTEGER, &showbar },
+		{ "showbar",	INTEGER, &showbar },
 		{ "topbar",		INTEGER, &topbar },
-		{ "nmaster",		INTEGER, &nmaster },
-		{ "resizehints",	INTEGER, &resizehints },
+		{ "nmaster",	INTEGER, &nmaster },
+		{ "resizehints",INTEGER, &resizehints },
 		{ "mfact",		FLOAT,	&mfact },
 		{ "gappih",		INTEGER, &gappih },
 		{ "gappiv",		INTEGER, &gappiv },
@@ -143,7 +143,7 @@ static const Key keys[] = {
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
-	{ MODKEY,                       XK_p,      	spawn,  {.v = startcmd } },
+	{ MODKEY,                       XK_p,      	spawn,  {.v = dmenucmd } },
 	{ MODKEY,			XK_grave,	spawn,	{.v = (const char*[]){ "dmenuunicode", NULL } } },
 	/* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
 	TAGKEYS(			XK_1,		0)
@@ -340,4 +340,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
 	{ ClkRootWin,		0,		Button2,	togglebar,	{0} },
 };
-
