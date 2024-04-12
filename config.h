@@ -106,7 +106,7 @@ static const Layout layouts[] = {
 /* commands */
 static char *termcmd[]  = { TERMINAL, NULL };
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normbgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+static char *dmenucmd[] = { "dmenu_run", "-fn", fonts, "-nb", normbgcolor, "-nf", normbgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static char *startcmd[] = { "rofi","-show","drun","-theme","Monokai","-icon-theme","'Tela-circle'","-show-icons",NULL };
 
 
