@@ -16,7 +16,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "monospace:size=12", "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true"  };
+static char *fonts[]          = { "monospace:size=14", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -105,8 +105,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char *termcmd[]  = { TERMINAL, NULL };
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static char *dmenucmd[] = { "dmenu_run", "-fn", fonts, "-nb", normbgcolor, "-nf", normbgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
+//static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+//static char *dmenucmd[] = { "dmenu_run", NULL };
 static char *startcmd[] = { "rofi","-show","drun","-theme","Monokai","-icon-theme","'Tela-circle'","-show-icons",NULL };
 
 
@@ -144,7 +144,7 @@ static const Key keys[] = {
 	STACKKEYS(MODKEY|ShiftMask,                push)
 	/* { MODKEY|ShiftMask,		XK_Escape,	spawn,	SHCMD("") }, */
 //	{ MODKEY,                       XK_p,      	spawn,  {.v = dmenucmd } },
-	{ MODKEY,			XK_p,		spawn,  {.v = (const char*[]){ "dmenu_run", NULL } } },
+//	{ MODKEY,			XK_p,		spawn,  {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY,			XK_grave,	spawn,	{.v = (const char*[]){ "dmenuunicode", NULL } } },
 	/* { MODKEY|ShiftMask,		XK_grave,	togglescratch,	SHCMD("") }, */
 	TAGKEYS(			XK_1,		0)
