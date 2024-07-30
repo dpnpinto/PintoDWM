@@ -259,9 +259,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
 	{ 0,				XK_Print,	spawn,		SHCMD("maim ~/Imagens/image-full-$(date '+%y%m%d-%H%M-%S').png") },
-	{ ShiftMask,			XK_Print,	spawn,		SHCMD("maim -s ~/Imagens/image-sele-$(date '+%y%m%d-%H%M-%S').png") },
-	{ MODKEY,			XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", NULL } } },
-	{ MODKEY|ShiftMask,		XK_Print,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
+	{ MODKEY,			XK_Print,	spawn,		SHCMD("maim -s ~/Imagens/image-sele-$(date '+%y%m%d-%H%M-%S').png") },
 	{ MODKEY,			XK_Delete,	spawn,		{.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
 
