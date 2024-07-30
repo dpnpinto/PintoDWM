@@ -8,6 +8,7 @@ ShiftMask - > ShiftKey
 * MODKEY q -> Close program
 * MODKEY | ShiftMask q -> log out
 * MODKEY w -> Open Browser
+* MODKEY e -> Open Email
 * MODKEY | ShiftMask w -> Open Network Manager (nmtui)
 * MODKEY r -> Open Htop
 ### Second key line
@@ -32,3 +33,6 @@ ShiftMask - > ShiftKey
 * MODKEY | SiftMask Minus -> Volume -15%
 * MODKEY Plus -> Volume +5%
 * MODKEY | SiftMask Plus -> Volume +15%
+### Special keys
+* MODKEY Prt sc -> Print All Screen to a file in Imagens
+* MODKEY | ShiftMask Prt sc -> Print Selected Screen to a file Imagens
