@@ -197,7 +197,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
 	{ MODKEY,			XK_s,		togglesticky,	{0} }, /* Noice visible window in alll workspaces*/
 //      { MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("") },
-        { MODKEY,                       XK_d,           spawn,          { cmd } }, /* My start apps is rofi*/
+        { MODKEY,                       XK_d,           spawn,          {.v = startcmd} }, /* My start apps is rofi*/
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
