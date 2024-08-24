@@ -180,7 +180,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
-	{ MODKEY,			XK_s,		togglesticky,	{0} }, /* Noice visible window in alll workspaces*/
+	{ MODKEY,			XK_s,		togglesticky,	{0} }, /* Nice visible window in all workspaces*/
 	{ MODKEY,                       XK_d,           spawn,          {.v = startcmd} }, /* My start apps is rofi*/
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
@@ -198,14 +198,13 @@ static const Key keys[] = {
 
 	{ MODKEY,			XK_z,		incrgaps,	{.i = +3 } },
 	{ MODKEY,			XK_x,		incrgaps,	{.i = -3 } },
-	/* V is automatically bound above in STACKKEYS */
+	/* V is automatically bounded above in STACKKEYS */
 	{ MODKEY,			XK_b,		togglebar,	{0} },
 	/* { MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_c,		spawn,		{.v = (const char*[]){"code"} } },
 	{ MODKEY,			XK_n,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
 	{ MODKEY|ShiftMask,		XK_n,		spawn,		SHCMD(TERMINAL " -e newsboat ; pkill -RTMIN+6 dwmblocks") },
-	{ MODKEY,			XK_m,		spawn,		{.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
-	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,		XK_m,		spawn,		        SHCMD("amixer set Master toggle; kill -44 $(pidof dwmblocks)") }, // correct this
 	{ MODKEY,			XK_Left,	focusmon,	{.i = -1 } },
 	{ MODKEY|ShiftMask,		XK_Left,	tagmon,		{.i = -1 } },
 	{ MODKEY,			XK_Right,	focusmon,	{.i = +1 } },
