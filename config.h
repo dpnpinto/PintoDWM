@@ -228,7 +228,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_space,	togglefloating,	{0} },
 
 	{ 0,				XK_Print,	spawn,		SHCMD("maim ~/Imagens/image-full-$(date '+%y%m%d-%H%M-%S').png") },
-	{ MODKEY,			XK_Print,	spawn,		SHCMD("maim -s ~/Imagens/image-sele-$(date '+%y%m%d-%H%M-%S').png") },
+	{ MODKEY,			XK_Print,	spawn,		SHCMD("maim -s ~/Imagens/image-selected-$(date '+%y%m%d-%H%M-%S').png") },
 	{ MODKEY,			XK_Scroll_Lock,	spawn,		SHCMD("killall screenkey || screenkey &") },
 
 	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -m; kill -44 $(pidof dwmblocks)") },
