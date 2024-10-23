@@ -5,6 +5,7 @@
 #define TERMCLASS "St"
 #define BROWSER "vivaldi"
 #define EMAIL "thunderbird"
+#define FILEMANAGER "thunar"
 
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -181,7 +182,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_o,		incnmaster,     {.i = -1 } },
 	{ MODKEY,			XK_a,		togglegaps,	{0} },
 	{ MODKEY|ShiftMask,		XK_a,		defaultgaps,	{0} },
-	{ MODKEY,			XK_s,		togglesticky,	{0} }, /* Nice visible window in all workspaces*/
+	{ MODKEY,			XK_s,		spawn,	{.v = (const char*[]){ FILEMANAGER, NULL } } }, /* Open the GUI File Manager*/
+	{ MODKEY|ShiftMask,		XK_s,		togglesticky,	{0} }, /* Nice visible window in all workspaces*/
 	{ MODKEY,                       XK_d,           spawn,          {.v = startcmd} }, /* My start apps is rofi*/
 	{ MODKEY,			XK_f,		togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,		XK_f,		setlayout,	{.v = &layouts[8]} },
