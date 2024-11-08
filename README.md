@@ -1,38 +1,36 @@
-# PintoDWM
-My version of DWM, the one that I use in my PintArch. Expected this to change from time to time allways tunning this.
+# Luke's build of dwm
 
-## Keys that I use
-MODKEY - > Windows Key
-ShiftMask - > ShiftKey
-### First key line
-* MODKEY q -> Close program
-* MODKEY | ShiftMask q -> log out
-* MODKEY w -> Open Browser
-* MODKEY e -> Open Email
-* MODKEY | ShiftMask w -> Open Network Manager (nmtui)
-* MODKEY r -> Open Htop
-### Second key line
-* MODKEY a -> Togle Gaps
-* MODKEY | ShiftMask a -> Defeult Gaps
-* MODKEY s -> Toggle sticky Windows (when stiky is on windows is visible in all workspaces)
-* MODKEY d -> Start Menu (I use Rofi)
-* MODKEY f -> togle window view to full screen
-* MODKEY | ShiftMask f -> No layout Floating window
-* MODKEY h -> Change Windows size left
-* MODKEY j -> Change Windows focus left
-* MODKEY | ShiftMask j -> Change Windows position left
-* MODKEY k -> Change Windows focus right
-* MODKEY | ShiftMask k -> Change Windows position right
-* MODKEY l -> Change Windows size right
-* MODKEY | ShiftMask r -> Open Network Manager (nmtui)
-### Third key line
-* MODKEY z -> increase windows gaps
-* MODKEY x -> decrease windows gaps
-* MODKEY b -> togle view of the taskbar
-* MODKEY Minus -> Volume -5%
-* MODKEY | SiftMask Minus -> Volume -15%
-* MODKEY Plus -> Volume +5%
-* MODKEY | SiftMask Plus -> Volume +15%
-### Special keys
-* MODKEY Prt sc -> Print All Screen to a file in Imagens
-* MODKEY | ShiftMask Prt sc -> Print Selected Screen to a file Imagens
+## FAQ
+
+> What are the bindings?
+
+This is suckless, mmmbud, the source code is the documentation! Check out [config.h](config.h).
+
+Okay, okay, actually I keep a readme in `larbs.mom` for my whole system, including the binds here.
+Press <kbd>super+F1</kbd> to view it in dwm (zathura is required for that binding).
+I haven't kept `man dwm`/`dwm.1` updated though. PRs welcome on that, lol.
+
+## Patches and features
+
+- [Clickable statusbar](https://dwm.suckless.org/patches/statuscmd/) with my build of [dwmblocks](https://github.com/lukesmithxyz/dwmblocks).
+- Reads [xresources](https://dwm.suckless.org/patches/xresources/) colors/variables (i.e. works with `pywal`, etc.).
+- scratchpad: Accessible with <kbd>mod+shift+enter</kbd>.
+- New layouts: bstack, fibonacci, deck, centered master and more. All bound to keys <kbd>super+(shift+)t/y/u/i</kbd>.
+- True fullscreen (<kbd>super+f</kbd>) and prevents focus shifting.
+- Windows can be made sticky (<kbd>super+s</kbd>).
+- [hide vacant tags](https://dwm.suckless.org/patches/hide_vacant_tags/) hides tags with no windows.
+- [stacker](https://dwm.suckless.org/patches/stacker/): Move windows up the stack manually (<kbd>super-K/J</kbd>).
+- [shiftview](https://dwm.suckless.org/patches/nextprev/): Cycle through tags (<kbd>super+g/;</kbd>).
+- [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/): Gaps allowed across all layouts.
+- [swallow patch](https://dwm.suckless.org/patches/swallow/): if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
+
+
+## Installation for newbs
+
+```bash
+git clone https://github.com/LukeSmithxyz/dwm.git
+cd dwm
+sudo make install
+```
+
+There is also a `PKGBUILD` usable on distributions with pacman. Run `makepkg -si` instead of `sudo make install`.
