@@ -5,7 +5,7 @@
 #define TERMCLASS "St"
 #define BROWSER "vivaldi"
 #define EMAIL "thunderbird"
-#define FILEMANAGER "thunar"
+#define FILEMANAGER "pcmanfm"
 
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
