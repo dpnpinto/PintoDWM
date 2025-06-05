@@ -2,18 +2,18 @@ _pkgname=dwm
 pkgname=$_pkgname-larbs-git
 pkgver=6.2.r1888.0ac09e0
 pkgrel=1
-pkgdesc="Luke's build of dwm"
-url=https://github.com/LukeSmithxyz/dwm
+pkgdesc="Pinto build of dwm"
+url=https://github.com/dpnpinto/PintoDWM
 arch=(i686 x86_64)
 license=(MIT)
 makedepends=(git)
 depends=(freetype2 libx11 libxft)
 optdepends=(
-	'dmenu: program launcher'
+	'rofi: program launcher'
 	'st: terminal emulator')
 provides=($_pkgname)
 conflicts=($_pkgname)
-source=(git+https://github.com/LukeSmithxyz/dwm)
+source=(git+https://github.com/dpnpinto/PintoDWM)
 sha256sums=('SKIP')
 
 pkgver() {
