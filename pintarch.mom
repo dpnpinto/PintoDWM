@@ -345,15 +345,15 @@ This will overwrite the original config files though, including changes you made
 You can follow links via the keyboard in this pdf reader by pressing \f(CWf\fP followed by the number that appears on the desired link.
 .LI
 .ITEM
-.PDF_WWW_LINK "mailto:dpnpinto@gmail.com" "dpnpinto@gmail.com"
-\(en For questions!
+.PDF_WWW_LINK "https://x.com/dpnpinto" "https://x.com/dpnpinto"
+\(en For questions.
 .ITEM
 .PDF_WWW_LINK "http://dpnpinto.github.io" "https://dpnpinto.github.io"
-\(en For stalking!
+\(en What motivates me?
 .ITEM
 .PDF_WWW_LINK "https://www.youtube.com/@dpinto.engenharia" "www.youtube.com/@dpinto.engenharia"
-\(en To incentivize more stuff!
+\(en To incentivize more stuff.
 .ITEM
 .PDF_WWW_LINK "https://github.com/dpnpinto" "My Github Page"
-\(en For the code behind it!
+\(en For the code behind my projects.
 .LIST OFF
