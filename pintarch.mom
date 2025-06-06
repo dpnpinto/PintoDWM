@@ -4,7 +4,7 @@
 ..
 .PARA_SPACE 1m
 .TITLE "\s+(10A Friendly Guide to PintArch!\s0"
-.AUTHOR "\s+5Duarte Pedro Pinto\s0"
+.AUTHOR "\s+5Duarte Pedro Pinto Arch Linux\s0"
 .DOCTYPE    DEFAULT
 .COPYSTYLE  FINAL
 .PRINTSTYLE TYPESET
@@ -59,7 +59,7 @@ This is to make one-handing on laptops easier.
 .LIST OFF
 .PP
 If you'd like to change any of these keyboard changes, you need only open and change the \f(CWremaps\fP script.
-All custom scripts in LARBS are located in \f(CW~/.local/bin/\fP.
+All custom scripts about PintArch are located in \f(CW~/.local/bin/\fP.
 Actually, this should go without saying, but \fIeverything\fP here can easily be changed.
 Below in this document, there is information about where to change programs/components.
 .PP
