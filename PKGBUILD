@@ -1,5 +1,5 @@
 _pkgname=dwm
-pkgname=$_pkgname-larbs-git
+pkgname=$_pkgname-PintArch-git
 pkgver=6.2.r1888.0ac09e0
 pkgrel=1
 pkgdesc="Pinto build of dwm"
