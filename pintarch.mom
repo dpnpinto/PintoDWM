@@ -3,8 +3,8 @@
 .SHIFT_LIST 10p
 ..
 .PARA_SPACE 1m
-.TITLE "\s+(10A Friendly Guide to PintArch!\s0"
-.AUTHOR "\s+5Duarte Pedro Pinto Arch Linux\s0"
+.TITLE "\s+(10A Friendly Guide to PintDWM!\s0"
+.AUTHOR "\s+5Duarte Pedro Pinto\s0"
 .DOCTYPE    DEFAULT
 .COPYSTYLE  FINAL
 .PRINTSTYLE TYPESET
@@ -292,54 +292,6 @@ There you can modify their \f(CWconfig.h\fP files or other source code, then \f(
 vim is set to automatically recompile and install these programs whenever you save changes to any \f(CWconfig.h\fP file
 (compilation will be nearly instantaneous).
 You'll have to restart the program to see its effects obviously.
-.HEADING 1 "Frequently Asked Questions (FAQs)"
-.HEADING 2 "My keyboard isn't working as expected!"
-.PP
-As mentioned above, LARBS makes some keyboard changes with the \f(CWremaps\fP script.
-These settings may override your preferred settings, so you should open this file and comment out troublesome lines if you have issues.
-.HEADING 2 "My audio isn't working!"
-.PP
-On fresh install, the Linux audio system often mutes outputs.
-You may also need to set your preferred default output sink which you can do by the command line, or by selecting one with \f(CWpulsemixer\fP (\f(CWMod+F4\fP).
-.HEADING 2 "How do I copy and paste?"
-.PP
-Copying and pasting is always program-specific on any system.
-In most graphical programs, copy and paste will be the same as they are on Windows: \f(CWctrl-c\fP and \f(CWctrl-v\fP.
-In the Linux terminal, those binds have other more important purposes, so you can run \f(CWman st\fP to see how to copy and paste in my terminal build.
-.PP
-Additionally, I've set vim to use the clipboard as the default buffer, which means when you yank or delete something in vim, it will be in your system clipboard as well, so you can \f(CWctrl-v\fP it into your browser instance, etc. You can also paste material copied from other programs into vim with the typical vim bindings.
-.HEADING 2 "How do I change the background/wallpaper?"
-.PP
-The system will always read the file \f(CW~/.local/share/bg\fP as the wallpaper.
-The script \f(CWsetbg\fP, if run on an image will set it as the persistent background.
-When using the file manager, you can simply hover over an image name and type \f(CWb\fP and this will run \f(CWsetbg\fP.
-.HEADING 2 "How I change the colorscheme?"
-.PP
-LARBS no longer deploys Xresources by default, but check \f(CW~/.config/x11/xresources\fP for a list of color schemes you can activate or add your own. When you save the file, vim will automatically update the colorscheme. If you'd like these colors activated by default on login, there is a line in \f(CW~/.config/x11/xprofile\fP you can uncomment to allow that.
-.PP
-Or, if you want to use \f(CWwal\fP to automatically generate colorschemes from your wallpapers, just install it and \f(CWsetbg\fP will automatically detect and run it on startup and wallpaper change.
-.HEADING 2 "How do I set up my email?"
-.PP
-LARBS comes with mutt-wizard, which gives the ability to receive and send all your email and keep an offline store of it all in your terminal, without the need for browser.
-You can add email accounts by running \f(CWmw -a your@email.com\fP.
-See \f(CWman mw\fP for all the information you need about mutt-wizard.
-.PP
-Once you have successfully added your email address(es), you can open your mail with \f(CWneomutt\fP which is also bound to \f(CWMod+e\fP.
-You can sync your mail by pressing \f(CWMod+F8\fP and you can set a cronjob to sync mail every 10 minutes by running \f(CWmw -t 10\fP.
-.PP
-You may also want to install \f(CWpam-gnupg-git\fP, which can be set up to automatically unlock your GPG key on login, which will allow you avoid having put in a password to sync and send, all while keeping your password safe and encrypted on your machine.
-.HEADING 2 "How do I set up my music?"
-.PP
-By default, mpd, the music daemon assumes that \f(CW~/Music\fP is your music directory.
-This can be changed in \f(CW~/.config/mpd/mpd.conf\fP.
-When you add music to your music folder, you may have to run \f(CWmpc up\fP in the terminal to update the database.
-mpd is controlled by ncmpcpp, which is accessible by \f(CWMod+m\fP.
-.HEADING 2 "How do I update LARBS?"
-.PP
-LARBS is deployed as a git repository in your home directory.
-You can use it as such to fetch, diff and merge changes from the remote repository.
-If you don't want to do that or don't know how to use git, you can actually just rerun the script (as root) and reinstall LARBS and it will automatically update an existing install if you select the same username.
-This will overwrite the original config files though, including changes you made for them, but this is an easier brute force approach that will also install any new dependencies.
 .HEADING 1 "Important Links"
 .PP
 You can follow links via the keyboard in this pdf reader by pressing \f(CWf\fP followed by the number that appears on the desired link.
