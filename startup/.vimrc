@@ -1,3 +1,7 @@
+set nocompatible
 set number
-colorscheme darkblue
+colorscheme default
+filetype on
 syntax on
+set ignorecase
+set wildmenu
