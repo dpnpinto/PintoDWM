@@ -1,6 +1,6 @@
 _pkgname=dwm
 pkgname=$_pkgname-PintArch-git
-pkgver=6.2.r1888.0ac09e0
+pkgver=6.6.r1888.0ac09e0
 pkgrel=1
 pkgdesc="Pinto build of dwm"
 url=https://github.com/dpnpinto/PintoDWM
