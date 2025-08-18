@@ -1,5 +1,5 @@
 # PintoDWM
-My version of DWM, the one that I use in my PintArch. Expected this to change from time to time allways tunning this.
+My version of DWM (ver 6.6), the one that I use in my PintArch. Expected this to change from time to time allways tunning this.
 
 ## Keys that I use
 MODKEY - > Windows Key
