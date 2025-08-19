@@ -7,11 +7,13 @@
 
 export PATH=$PATH:~/.local/bin 
 export TERM=st
+export EDITOR=nvim
 
 # Get some nie  aliases for colors and stuff
 
 alias ls='eza --icons'
-alias la='eza -alh --icons --git --group --color-scale'
+alias la='eza -alh --icons --git --group'
+alias ll='eza --icons'
 alias rm='rm -i'
 alias grep='grep --color=always'
 alias tree='tree -C'
@@ -20,9 +22,11 @@ alias ip='ip --color=always'
 alias dmesg='dmesg --color=always'
 alias ..='cd ..'
 alias v='vim'
+alias nv='nvim'
 alias code='code-oss'
 alias cat='bat'
 alias df='dysk'
+alias lf='yazi'
 alias du='ncdu --color dark'
 
 # Get some nice colors in man pages and use most as the pager
