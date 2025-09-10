@@ -1,6 +1,10 @@
 set nocompatible
+set t_Co=256
+colorscheme retrobox
+set background=dark
 set number
-colorscheme default
+set relativenumber
+set cursorline
 filetype on
 syntax on
 set ignorecase
