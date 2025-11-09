@@ -110,7 +110,7 @@ static const Layout layouts[] = {
 static char *termcmd[]  = { TERMINAL, NULL };
 //static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 //static char *dmenucmd[] = { "dmenu_run", NULL };
-static char *startcmd[] = { "rofi","-show","drun","-theme","Monokai","-icon-theme","'Tela-circle'","-show-icons",NULL };
+static char *startcmd[] = { "rofi","-show","drun","-theme","gruvbox-dark-soft","-icon-theme","'Tela-circle'","-show-icons",NULL };
 
 
 /*
