@@ -1,5 +1,3 @@
-/* See LICENSE file for copyright and license details. */
-
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
@@ -20,11 +18,11 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char *fonts[]          = { "JetBrainsMonoNerd:size=14", "NotoColorEmoji:pixelsize=14:antialias=true:autohint=true"  };
 static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#b37700"; /*"#666600";*/
+static char normbordercolor[]       = "#666600"; /*"#666600";*/
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#cc241d"; /*"#770000";*/
-static char selbgcolor[]            = "#b37700";
+static char selbgcolor[]            = "#666600";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
