@@ -13,7 +13,7 @@ ShiftMask - > ShiftKey
 * MODKEY r -> Open Htop
 ### Second key line
 * MODKEY a -> Togle Gaps
-* MODKEY | ShiftMask a -> Defeult Gaps
+* MODKEY | ShiftMask a -> Default Gaps
 * MODKEY s -> Toggle sticky Windows (when stiky is on windows is visible in all workspaces)
 * MODKEY d -> Start Menu (I use Rofi)
 * MODKEY f -> togle window view to full screen
