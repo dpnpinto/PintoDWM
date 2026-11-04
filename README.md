@@ -1,5 +1,6 @@
 # PintoDWM
 My version of DWM (ver 6.8), the one that I use in my PintArch. Expected this to change from time to time allways tunning this.
+I normally apply all the updates that I like and that make sense to me from: https://git.suckless.org/dwm/
 
 ## Keys that I use
 MODKEY - > Windows Key
