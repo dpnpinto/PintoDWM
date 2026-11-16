@@ -1,6 +1,6 @@
 #
 # ~/.bash_profile
 #
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx &> ~/.startx.log
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec startx > ~/.startx.log 2>&1
 fi
