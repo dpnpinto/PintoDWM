@@ -7,7 +7,7 @@
 
 export PATH=$PATH:~/.local/bin 
 export TERM=st
-export EDITOR=nvim
+export EDITOR=vim
 
 # Get some nie  aliases for colors and stuff
 
