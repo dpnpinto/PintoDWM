@@ -27,7 +27,7 @@ alias df='dysk'
 alias lf='yazi'
 alias du='ncdu --color dark'
 
-# Get some nice colors in man pages and use most as the pager
+# Get some nice colors in man and tldr pages
 
 man() {
     command man "$@" | bat -l man --style=-numbers
