@@ -26,6 +26,7 @@ alias code='code-oss'
 alias df='dysk'
 alias lf='yazi'
 alias du='ncdu --color dark'
+alias pat='bat --style=plain'
 
 # Get some nice colors in man and tldr pages
 
